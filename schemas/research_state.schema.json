@@ -1,0 +1,580 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AutoResearcher research-state v2.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "research_id",
+    "research_object",
+    "derivations",
+    "hypotheses",
+    "experiments",
+    "decisions",
+    "novelty"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "2.1"
+    },
+    "research_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string"
+    },
+    "research_object": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "revision",
+        "scope",
+        "inputs",
+        "outputs",
+        "nodes",
+        "edges",
+        "unknown_edges"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "code_reference": {
+          "type": "string"
+        },
+        "checkpoint": {
+          "type": "string"
+        },
+        "inputs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "semantics"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "shape": {
+                "type": "string"
+              },
+              "semantics": {
+                "type": "string",
+                "minLength": 1
+              },
+              "dtype": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "outputs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "semantics"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "shape": {
+                "type": "string"
+              },
+              "semantics": {
+                "type": "string",
+                "minLength": 1
+              },
+              "dtype": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "operation",
+              "verification"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "operation": {
+                "type": "string",
+                "minLength": 1
+              },
+              "expression": {
+                "type": "string"
+              },
+              "verification": {
+                "enum": [
+                  "SOURCE_VERIFIED",
+                  "MODEL_HYPOTHESIS",
+                  "UNKNOWN"
+                ]
+              },
+              "locator": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "from",
+              "to"
+            ],
+            "properties": {
+              "from": {
+                "type": "string",
+                "minLength": 1
+              },
+              "to": {
+                "type": "string",
+                "minLength": 1
+              },
+              "meaning": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "unknown_edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "description",
+              "decision_relevant",
+              "resolving_action"
+            ],
+            "properties": {
+              "description": {
+                "type": "string",
+                "minLength": 1
+              },
+              "decision_relevant": {
+                "type": "boolean"
+              },
+              "resolving_action": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "closed_for_scoped_question": {
+          "type": "boolean"
+        }
+      }
+    },
+    "derivations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "claim",
+          "assumptions",
+          "steps",
+          "status",
+          "scope"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "claim": {
+            "type": "string",
+            "minLength": 1
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "status": {
+            "enum": [
+              "PROPOSED",
+              "CHECKED",
+              "DISPROVED",
+              "CONDITIONAL"
+            ]
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 1
+          },
+          "counterexample": {
+            "type": "string"
+          },
+          "implication": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "hypotheses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "mechanism",
+          "status",
+          "prediction"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "mechanism": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "CANDIDATE",
+              "SUPPORTED",
+              "FALSIFIED",
+              "REVISED"
+            ]
+          },
+          "prediction": {
+            "type": "string",
+            "minLength": 1
+          },
+          "derivation_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "locator": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "SOURCE",
+                    "TRACE",
+                    "ARTIFACT",
+                    "REFERENCE",
+                    "DERIVATION"
+                  ]
+                },
+                "note": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "locator",
+                "kind"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "experiments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "question",
+          "status",
+          "empirical_quantity",
+          "why_not_derivable",
+          "controls",
+          "predictions",
+          "artifacts"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "question": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "PLANNED",
+              "QUEUED",
+              "RUNNING",
+              "OBSERVED",
+              "CANCELLED",
+              "INCONCLUSIVE"
+            ]
+          },
+          "empirical_quantity": {
+            "type": "string",
+            "minLength": 1
+          },
+          "why_not_derivable": {
+            "type": "string",
+            "minLength": 1
+          },
+          "controls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "predictions": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "required": [
+                "outcome",
+                "decision"
+              ],
+              "properties": {
+                "outcome": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "decision": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "artifacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "locator": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "SOURCE",
+                    "TRACE",
+                    "ARTIFACT",
+                    "REFERENCE",
+                    "DERIVATION"
+                  ]
+                },
+                "note": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "locator",
+                "kind"
+              ]
+            }
+          },
+          "cost_estimate": {
+            "type": "string"
+          },
+          "hypothesis_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "novelty": {
+      "type": "object",
+      "required": [
+        "status",
+        "mechanism_link",
+        "nearest_prior_art"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "DIAGNOSTIC",
+            "BASELINE",
+            "CANDIDATE",
+            "DISTINCT_PREDICTION",
+            "AUDITED",
+            "VALIDATED"
+          ]
+        },
+        "mechanism_link": {
+          "type": "string"
+        },
+        "nearest_prior_art": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "reference",
+              "comparison"
+            ],
+            "properties": {
+              "reference": {
+                "type": "string",
+                "minLength": 1
+              },
+              "comparison": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "route",
+          "reason"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "route": {
+            "enum": [
+              "MAP_FLOW",
+              "DERIVE",
+              "STATIC_CHECK",
+              "EXPERIMENT",
+              "DESIGN",
+              "ACCEPT_CONDITIONAL",
+              "REPAIR",
+              "PIVOT",
+              "DEFER"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "derivation_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "experiment_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "branches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "failure",
+          "lesson"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "failure": {
+            "type": "string",
+            "minLength": 1
+          },
+          "lesson": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "locator": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "SOURCE",
+                    "TRACE",
+                    "ARTIFACT",
+                    "REFERENCE",
+                    "DERIVATION"
+                  ]
+                },
+                "note": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "locator",
+                "kind"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
