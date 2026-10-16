@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.env
+.env.*
+!examples/.env.example
+artifacts/
+outputs/
+research_state.json
+HANDOFF.md
