@@ -1,0 +1,143 @@
+{
+  "schema_version": "2.1",
+  "research_id": "illustrative-masked-projection-empirical-extension",
+  "description": "Illustration: symbolic result plus a hypothetical planned empirical study; nothing executed.",
+  "research_object": {
+    "id": "symbolic-projection",
+    "revision": "ILLUSTRATIVE-NO-CODE-COMMIT",
+    "scope": "Symbolic masking and a separate hypothetical empirical activation-distribution question",
+    "code_reference": "symbolic only, no implementation verified",
+    "inputs": [
+      {
+        "name": "h",
+        "shape": "C",
+        "semantics": "hidden activations"
+      },
+      {
+        "name": "m",
+        "shape": "C",
+        "semantics": "fixed 0/1 mask"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "y",
+        "shape": "D",
+        "semantics": "dense output"
+      },
+      {
+        "name": "y_m",
+        "shape": "D",
+        "semantics": "masked output"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "h",
+        "operation": "symbolic input",
+        "verification": "MODEL_HYPOTHESIS"
+      },
+      {
+        "id": "mask",
+        "operation": "elementwise hidden selection",
+        "expression": "h_m=m⊙h",
+        "verification": "MODEL_HYPOTHESIS"
+      },
+      {
+        "id": "projection",
+        "operation": "linear map",
+        "expression": "y=Wh; y_m=W(m⊙h)",
+        "verification": "MODEL_HYPOTHESIS"
+      }
+    ],
+    "edges": [
+      {
+        "from": "h",
+        "to": "mask"
+      },
+      {
+        "from": "mask",
+        "to": "projection"
+      }
+    ],
+    "unknown_edges": [],
+    "closed_for_scoped_question": true
+  },
+  "derivations": [
+    {
+      "id": "d1",
+      "claim": "y−y_m=W[:,S]h[S] where S={i|m_i=0}",
+      "assumptions": [
+        "fixed linear W",
+        "same hidden vector h in both paths",
+        "m is binary"
+      ],
+      "steps": [
+        "y−y_m=Wh−Wdiag(m)h",
+        "=W(I−diag(m))h",
+        "=W[:,S]h[S]"
+      ],
+      "status": "CONDITIONAL",
+      "scope": "one local linear projection",
+      "implication": "No GPU experiment is required to verify this identity."
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "h1",
+      "mechanism": "Output error changes with W and data-dependent hidden-channel covariance.",
+      "status": "CANDIDATE",
+      "prediction": "Joint structure of hidden activations and downstream projection will be more informative than activation magnitude alone.",
+      "derivation_ids": [
+        "d1"
+      ]
+    }
+  ],
+  "experiments": [
+    {
+      "id": "e1",
+      "question": "Does real activation/projection alignment explain observed errors better than activation magnitude alone?",
+      "status": "PLANNED",
+      "empirical_quantity": "Activation and error distributions under actual workloads",
+      "why_not_derivable": "Requires the unknown input distribution and actual checkpoint activations",
+      "controls": [
+        "Same tokens, model weights and masks across comparators",
+        "Match sparsity budget"
+      ],
+      "predictions": [
+        {
+          "outcome": "Joint metric separates high-error cases",
+          "decision": "Study cancellation and alignment as a mechanism"
+        },
+        {
+          "outcome": "Joint metric does not separate cases",
+          "decision": "Reconsider candidate mechanism; inspect downstream state sensitivity"
+        }
+      ],
+      "artifacts": [],
+      "cost_estimate": "Minimal activation trace, not full video generation",
+      "hypothesis_ids": [
+        "h1"
+      ]
+    }
+  ],
+  "novelty": {
+    "status": "CANDIDATE",
+    "mechanism_link": "h1",
+    "nearest_prior_art": []
+  },
+  "decisions": [
+    {
+      "id": "dec1",
+      "route": "EXPERIMENT",
+      "reason": "The exact algebra is resolved; the remaining dataset-dependent property is not.",
+      "derivation_ids": [
+        "d1"
+      ],
+      "experiment_ids": [
+        "e1"
+      ]
+    }
+  ],
+  "branches": []
+}
