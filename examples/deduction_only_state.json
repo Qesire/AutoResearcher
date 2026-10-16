@@ -1,0 +1,103 @@
+{
+  "schema_version": "2.1",
+  "research_id": "illustrative-masked-linear-layer",
+  "description": "Illustrative symbolic study only: NO runs, numerical measurements, or verified project source.",
+  "research_object": {
+    "id": "symbolic-projection",
+    "revision": "ILLUSTRATIVE-NO-CODE-COMMIT",
+    "scope": "Exact projection with a fixed binary hidden-channel mask",
+    "code_reference": "symbolic only, no implementation verified",
+    "inputs": [
+      {
+        "name": "h",
+        "shape": "C",
+        "semantics": "hidden activations"
+      },
+      {
+        "name": "m",
+        "shape": "C",
+        "semantics": "fixed 0/1 mask"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "y",
+        "shape": "D",
+        "semantics": "dense output"
+      },
+      {
+        "name": "y_m",
+        "shape": "D",
+        "semantics": "masked output"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "h",
+        "operation": "symbolic input",
+        "verification": "MODEL_HYPOTHESIS"
+      },
+      {
+        "id": "mask",
+        "operation": "elementwise hidden selection",
+        "expression": "h_m=m⊙h",
+        "verification": "MODEL_HYPOTHESIS"
+      },
+      {
+        "id": "projection",
+        "operation": "linear map",
+        "expression": "y=Wh; y_m=W(m⊙h)",
+        "verification": "MODEL_HYPOTHESIS"
+      }
+    ],
+    "edges": [
+      {
+        "from": "h",
+        "to": "mask"
+      },
+      {
+        "from": "mask",
+        "to": "projection"
+      }
+    ],
+    "unknown_edges": [],
+    "closed_for_scoped_question": true
+  },
+  "derivations": [
+    {
+      "id": "d1",
+      "claim": "y−y_m=W[:,S]h[S] where S={i|m_i=0}",
+      "assumptions": [
+        "fixed linear W",
+        "same hidden vector h in both paths",
+        "m is binary"
+      ],
+      "steps": [
+        "y−y_m=Wh−Wdiag(m)h",
+        "=W(I−diag(m))h",
+        "=W[:,S]h[S]"
+      ],
+      "status": "CONDITIONAL",
+      "scope": "one local linear projection",
+      "implication": "No GPU experiment is required to verify this identity."
+    }
+  ],
+  "hypotheses": [],
+  "experiments": [],
+  "novelty": {
+    "status": "DIAGNOSTIC",
+    "mechanism_link": "Exact symbolic masking decomposition; no claimed innovation.",
+    "nearest_prior_art": []
+  },
+  "decisions": [
+    {
+      "id": "dec1",
+      "route": "ACCEPT_CONDITIONAL",
+      "reason": "The scoped algebraic question is closed by a conditional derivation.",
+      "derivation_ids": [
+        "d1"
+      ]
+    }
+  ],
+  "branches": []
+}
