@@ -1,85 +1,83 @@
-# Mechanism Expansion and Anti-Defensive Research (MEAR)
+# Mechanism Expansion Through Constructive Inquiry (MEAR v2.3)
 
-MEAR augments CR/DF/CRL/MNG and GAPI. Its purpose is to prevent (1) epistemic paralysis, (2) hyperparameter micro-optimization inside a failed mechanism, and (3) indiscriminate novelty churn. **It is not a license to override evidence or constraints.**
+## Principle
 
-## A. Turn a real obstacle into a testable split
+When evidence surprises us, **generate an explanation that unlocks a new experiment, representation or algorithmic degree of freedom**. Constraints and negative results are useful scientific structure, not the voice or objective of the investigation.
 
-When someone says "cannot determine", "confounded", "too many risks", or "failed":
+## 1. Start with the strongest useful discovery
 
-1. Name the **exact inference** endangered, and its evidence scope.
-2. Preserve the **strongest established positive/negative fact**; derive what remains possible *within stated conditions*. Do not re-list generic caveats.
-3. Generate two or three **causally distinct** explanations, not synonyms. Each must predict an observable divergence under the same controlled probe. If no two defensible explanations exist, state a conditional bound/counterexample and close that scoped question.
-4. Identify the cheapest decision-changing action: algebra -> source/config inspection -> static/CPU test -> reuse existing artifacts -> minimal native probe -> large controlled experiment. Never insist on GPU if a theorem settles it.
-5. Supply an A/B decision map: what will be built, rejected or redefined under each outcome. Avoid fabricated numerical information-gain scores.
+Describe the actual surprising observation or proven relation. Derive a positive consequence: a newly identified dependency, an available signal, an error geometry, an invariance, or a restricted family that can be bypassed with a distinct operator.
 
-A caveat becomes actionable only if it changes a claim, experiment or next decision. Otherwise omit it from the lead.
+Example: "This packed tile is almost dense" suggests "the logical support does not match the execution unit"; it invites investigation of another execution granularity or change of representation. It does not answer all possible conditional-compute questions.
 
-## B. Scope-precise negative memory
+## 2. Diverge before converging
 
-A closed branch is a tuple:
-(object/version, input regime, action family and granularity, numerical operator and state, target and comparator, cost/quality gates, data split, evidence and conclusion).
+Explore a wide range of **cheap hypotheses** when the user asks for discovery or a mechanism is genuinely unknown. Try contrasting:
+- a different mathematical coordinate system or decomposition;
+- a new source of information at a different point in the computation;
+- a different action space/operator granularity;
+- a different causal target (local numerical fidelity versus downstream consequence);
+- a changed regime (conditioning, quantization, architecture, learning intervention or hardware).
 
-- Retain and respect the tuple. A simple change in rank, q, pooling, kernel name or random seed does not constitute a new mechanism unless it demonstrably changes a binding constraint.
-- Distinguish **rejected instance**, **rejected action family under a proved bound**, and **open scientific question**.
-- A new proposal must expose a **structural delta** versus the nearest failed branch: information available before action; representation; action space; error geometry; objective; causal intervention; deployment primitive. Say which prior obstruction this changes and how a cheap test could show it fails anyway.
-- Negative evidence narrows the search space. It does not automatically transfer across checkpoints, precisions, kernels, condition regimes, or distinct action families.
+Follow the unusual implication that the source or mathematics genuinely supports. **A creative hypothesis is allowed to precede full verification** when its assumptions and required checks are stated.
 
-## C. Expansion axes (choose, do not enumerate blindly)
+Once the question becomes "which test should run?", choose a small group of mechanisms that make **different predictions**. A two- or three-way discriminator is a testing tool, not an upper bound on initial thinking.
 
-When the current mechanism stagnates, explore one or two axes with the strongest object-derived rationale:
+## 3. Derive and discriminate
 
-- **Information timing:** can a previously computed signal predict the decision *before* the costly operation? An oracle with privileged information is not a deployable policy.
-- **Mathematical representation:** signed sums/cancellation, nullspaces, noncommutative quantization, equivalence classes, spectral or geometric coordinates, structured approximate operators. Propose only structures supported by the object.
-- **Action granularity:** token, group, tile, channel, layer, step or operator; distinguish mathematical zeros from hardware-elided work.
-- **Causal horizon:** local loss vs downstream dynamics, feedback and terminal outcome; teacher forcing vs free rollout.
-- **Environment:** dtype, checkpoint/lineage, conditioning, data distributions, hardware shape and bandwidth; isolate confounds rather than asserting a cause.
-- **Learning intervention:** zero-shot, static calibration, small post-training, reparameterization or full training; account for training assumptions and inference cost.
-- **Competing primitive:** equal-budget static baseline, functional compression, cache, fused kernel or other simpler alternative.
+For promising mechanisms:
+- Translate a key computation into symbols, including when the representation is approximate.
+- State the mechanism-specific observable: sign, rank, support, precision, latency, spatial/temporal pattern or policy change.
+- Ask what competing explanation gives a different outcome under the same probe.
+- Choose the cheapest reliable discriminator: proof/counterexample, source inspection, existing data, CPU miniature, targeted native trace, then full validation where needed.
+- Make the outcome consequential: which idea is refined, which instance is rejected, which new direction opens?
 
-If none of the axes changes a necessary condition, stop proliferating candidates. Return to object reconstruction or report a rigorous boundary.
+Mathematical proof is especially useful to close a scoped dead end and **free creative effort** for another mechanism. A theorem about an idealized operator still needs implementation correspondence before asserting a deployed effect.
 
-## D. Minimum-mechanism portfolio
+## 4. Learn from negative evidence without erasing it
 
-Maintain at most three live, **non-isomorphic** hypotheses: not three versions of the same mask/regularizer. For each give:
-observed anomaly -> causal model/equation -> distinguishing prediction -> cheapest falsifier -> deployment information and cost -> nearest historical failure and prior art.
-Rank by expected ability to change the scientific decision, not an invented numeric score. Explicitly consider a simple baseline that may defeat the new idea.
+Store closed experiments accurately: object/version, numerical path, action space, budget, dataset, comparator and observed result.
 
-Portfolio action is **not** necessarily EXPERIMENT. Derivation, static inspection and ACCEPT_CONDITIONAL are first-class outcomes. When results show a representation cannot meet a lower bound, PIVOT rather than widening its tuning grid.
+Ask **which assumption produced the obstruction**. The next question is often "What if the action/information/representation were different?" New experiments are justified by a changed causal or computational mechanism, not by a cosmetic parameter tweak.
 
-## E. Prohibit common failure patterns
+Three different outcomes can coexist:
+- This registered implementation failed its criterion.
+- A well-specified action class is excluded by a bound.
+- A different scientific question or intervention remains unexplored.
 
-- **Defensive veto:** "uncertainty exists, so wait for more evidence." Replace with the exact blocked inference and a feasible discriminator; if inaccessible, DEFER precisely.
-- **Local Goodhart loop:** "proxy score rose, so iterate." Show the bridge to terminal action; if absent, change metric or mechanism.
-- **Sunk-cost rescue:** "old method almost passed." Respect its original failure and require a structural change before reopening it.
-- **Shallow method recombination:** "use smoothing + distillation + LoRA." Derive necessity from actual computation, then test closest prior art.
-- **Oracle leakage:** using future/full-compute values to justify savings from earlier compute. Mark as upper bound and identify what is online-observable.
-- **Premature universal negative:** one checkpoint, limited support set or one quality axis fails -> all sparsity/training/caching fails. State exact quantified scope.
-- **False dynamism:** fixed schedules or changed weight width called input-conditioned routing. Report structural category honestly.
-- **Perpetual exploration:** always invent another mechanism even after a valid conclusion. Respect terminal proofs, irreducible cost bounds, and authorization.
+The first two are legitimate scientific progress. The third is room for innovation.
 
-## F. Output for a live investigation
+## 5. Let a result suggest a construction
 
-Use a short, decision-oriented response:
-**Goal and current scope -> strongest verified result -> precise obstruction -> 2 discriminable mechanisms (when needed) -> lowest-cost decisive action with conditional next decisions -> candidate/novelty/evidence level**.
+Translate a successful explanatory mechanism into the simplest possible new action. For example:
+- a signed cancellation structure -> output-aware support selection;
+- inaccessible oracle information -> early estimator based on an already computed signal;
+- quantization noncommutativity -> grouping aligned with quantization scales;
+- time-dependent error propagation -> an input-sensitive causal risk measure.
 
-Use a fuller portfolio only when the user requests a comprehensive plan. No obligatory boilerplate table. No pretending the agent has run tests it only proposed.
+These are **mechanism-to-design patterns**, not evidence that any example performs well. Derive its required information and costs, then challenge it with a strong simple baseline and prior work.
 
-## G. Explicit pass/fail examples
+Known techniques, including regularization, distillation, pruning and smoothing, remain useful when their mechanisms genuinely fit. The scientific contribution depends on a distinct prediction, valid result and comparison, not on avoiding familiar ingredients.
 
-**Bad:** "Local reconstruction loss improved; perhaps tune for another 100 epochs."
-**Better:** "Local loss improved under fixed teacher input only. The goal bridge is free rollout. A one-source rollout with matched compute differentiates optimization headroom from rollout mismatch. Do not change the frozen held-out set after seeing it."
+## 6. Promote ideas with increasing rigor
 
-**Bad:** "A packed tile was almost fully occupied; dynamic sparsity is futile."
-**Better:** "This tile closure was ineffective for this action granularity. Compare at equal cost an alternative operator representation or group placement justified by measured contribution geometry. Re-running the same tile with another threshold is not new evidence."
+An exploration seed needs a question, a possible mechanism and a falsifying observation. It may be speculative and may have no immediate terminal-performance bridge.
 
-**Bad:** "A confounder prevents conclusions."
-**Better:** "That confounder affects causal attribution of A versus B, not the observed result. Hold it fixed or use a common-input probe and state the OOD limitation; the outcome will choose between the two mechanisms."
+A registered research move needs competing predictions, experimental/source/proof checks and a concrete decision under alternative outcomes.
 
-**Bad:** "The study can never be conclusive."
-**Better:** "The registered instance is conclusively rejected under its gate. The broader claim requires another distinct test; its cheapest action is ..."
+A deployment claim needs complete relevant operations, conditioning, numerical paths, training costs as appropriate, independent data and a verified comparator. Frozen gates apply to the candidate originally registered.
 
-## H. Evidence discipline
+This avoids both extremes: unrestricted claims and pre-verification censorship of ideas.
 
-Keep observed, source-verified, proved conditional, simulated, and proposed status separate. Prior exposure of evaluation samples makes them development data. Keep claims traceable, preserve all negative receipts, and require independent validation for deployment/novelty. If the user did not authorize edits, compute, network writes or access, do not perform them.
+## 7. Work product
 
-This protocol is project-agnostic. See examples/FFNDS_GOAL_EXPANSION.md for a **non-executed** domain-specific example.
+For open investigations, lead with:
+**new structural insight -> mechanism-derived possibility -> most telling counterexample or discriminating prediction -> efficient next action.**
+
+For settled questions, give the precise theorem or observed failure and explain **which next frontier it reveals** when relevant. No mandatory mechanism quota or repeated cautionary paragraphs.
+
+## Evidence and authorization
+
+Hypotheses are named as hypotheses; measured evidence has locators. Genuine contradictions are confronted, not suppressed. Experiments, costly compute, model changes and external writes respect user authorization and the project's registered evaluation rules.
+
+Related protocols: GOAL_ALIGNMENT.md, OBJECT_RECONSTRUCTION.md, DEDUCTION_FIRST.md, NOVELTY_GATE.md and PROMPT_PLAYBOOK.md.
