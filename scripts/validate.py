@@ -78,6 +78,43 @@ def validate_state(data: dict, schema_path: Path | None = None) -> None:
         if d["route"] == "EXPERIMENT" and not d.get("experiment_ids"):
             raise ResearchStateError("EXPERIMENT decision must link an experiment")
 
+    # Optional v2.1-compatible GAPI/MEAR extension. It is not a model-performance
+    # oracle; it checks references and prevents simple evidence/status promotion.
+    contract = data.get("goal_contract")
+    moves = data.get("research_moves", [])
+    if moves and contract is None:
+        raise ResearchStateError("research_moves require a goal_contract")
+    if contract is not None:
+        criterion_ids = unique(contract["terminal_criteria"], "terminal criterion")
+        proxy_ids = unique(contract["proxy_metrics"], "proxy metric")
+    else:
+        criterion_ids = set()
+        proxy_ids = set()
+    move_ids = unique(moves, "research move")
+    branch_ids = {item["id"] for item in data.get("branches", [])}
+    for move in moves:
+        mid = move["id"]
+        if set(move["goal_criterion_ids"]) - criterion_ids:
+            raise ResearchStateError(f"research move {mid} cites unknown terminal criteria")
+        if move["trigger"] == "NEGATIVE_RESULT":
+            if not move.get("prior_branch_id") or not move.get("rejected_scope"):
+                raise ResearchStateError(f"negative-result move {mid} must bind prior branch and rejection scope")
+        if move.get("prior_branch_id") and move["prior_branch_id"] not in branch_ids:
+            raise ResearchStateError(f"research move {mid} cites unknown rejected branch")
+        if move["trigger"] == "PROXY_IMPROVEMENT" and not move.get("proxy_metric_id"):
+            raise ResearchStateError(f"proxy-improvement move {mid} requires a proxy metric")
+        if move.get("proxy_metric_id") and move["proxy_metric_id"] not in proxy_ids:
+            raise ResearchStateError(f"research move {mid} cites unknown proxy metric")
+        comparisons = move["competing_mechanisms"]
+        if len({x["id"] for x in comparisons}) != len(comparisons):
+            raise ResearchStateError(f"research move {mid} repeats a mechanism id")
+        if len({x["prediction"].strip().casefold() for x in comparisons}) != len(comparisons):
+            raise ResearchStateError(f"research move {mid} has indistinguishable predictions")
+        if move["status"] == "OBSERVED" and not any(
+            e["kind"] in {"ARTIFACT", "TRACE"} for e in move["evidence"]
+        ):
+            raise ResearchStateError(f"research move {mid} claims observation without trace/artifact")
+
     novelty = data["novelty"]
     if novelty["status"] in {"AUDITED", "VALIDATED"} and not novelty["nearest_prior_art"]:
         raise ResearchStateError("audited/validated novelty status lacks nearest-prior-art comparison")

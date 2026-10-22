@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "AutoResearcher research-state v2.1",
+  "title": "AutoResearcher research-state v2.1 with optional GAPI/MEAR extensions",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -571,6 +571,227 @@
                 "locator",
                 "kind"
               ]
+            }
+          }
+        }
+      }
+    },
+    "goal_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scientific_question",
+        "terminal_criteria",
+        "proxy_metrics"
+      ],
+      "properties": {
+        "scientific_question": {
+          "type": "string",
+          "minLength": 1
+        },
+        "terminal_criteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "requirement",
+              "comparator",
+              "verification"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "requirement": {
+                "type": "string",
+                "minLength": 1
+              },
+              "comparator": {
+                "type": "string",
+                "minLength": 1
+              },
+              "verification": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "proxy_metrics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "metric",
+              "why_not_terminal",
+              "bridge_test"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "metric": {
+                "type": "string",
+                "minLength": 1
+              },
+              "why_not_terminal": {
+                "type": "string",
+                "minLength": 1
+              },
+              "bridge_test": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "hard_constraints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "research_moves": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "trigger",
+          "goal_criterion_ids",
+          "structural_delta",
+          "competing_mechanisms",
+          "cheapest_discriminator",
+          "negative_outcome_decision",
+          "status",
+          "evidence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "trigger": {
+            "enum": [
+              "NEGATIVE_RESULT",
+              "PROXY_IMPROVEMENT",
+              "UNCERTAINTY",
+              "NOVELTY_CONFLICT",
+              "STAGNATION",
+              "DEPLOYMENT_GAP"
+            ]
+          },
+          "goal_criterion_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "prior_branch_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "proxy_metric_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rejected_scope": {
+            "type": "string",
+            "minLength": 1
+          },
+          "structural_delta": {
+            "type": "string",
+            "minLength": 1
+          },
+          "competing_mechanisms": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "mechanism",
+                "prediction",
+                "decision_if_supported"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "mechanism": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "prediction": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "decision_if_supported": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "cheapest_discriminator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "negative_outcome_decision": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "PROPOSED",
+              "CHECKED",
+              "OBSERVED"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "locator",
+                "kind"
+              ],
+              "properties": {
+                "locator": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "kind": {
+                  "enum": [
+                    "SOURCE",
+                    "TRACE",
+                    "ARTIFACT",
+                    "REFERENCE",
+                    "DERIVATION"
+                  ]
+                },
+                "note": {
+                  "type": "string"
+                }
+              }
             }
           }
         }

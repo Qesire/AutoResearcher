@@ -139,5 +139,56 @@
       ]
     }
   ],
-  "branches": []
+  "branches": [],
+  "goal_contract": {
+    "scientific_question": "For a fixed symbolic masked projection, which data-dependent output geometry predicts local error under equal budget?",
+    "terminal_criteria": [
+      {
+        "id": "g1",
+        "requirement": "Determine whether measured candidate improvement transfers to a genuinely independent output-error comparator",
+        "comparator": "Same projection, masks, evaluation split and count of retained coordinates",
+        "verification": "Registered full-output error on independent data, not merely proxy ranking"
+      }
+    ],
+    "proxy_metrics": [
+      {
+        "id": "p1",
+        "metric": "Magnitude-only local activation ranking",
+        "why_not_terminal": "It omits downstream W and cancellation and is only a selection diagnostic",
+        "bridge_test": "Recompute full-output error for equal-budget masks with fixed W"
+      }
+    ],
+    "hard_constraints": [
+      "Do not claim a run from this illustrative, planned-only example"
+    ]
+  },
+  "research_moves": [
+    {
+      "id": "move1",
+      "trigger": "PROXY_IMPROVEMENT",
+      "goal_criterion_ids": [
+        "g1"
+      ],
+      "proxy_metric_id": "p1",
+      "structural_delta": "Compare weight-aware joint output contributions against magnitude-only selection at equal mask count; not more magnitude-threshold tuning",
+      "competing_mechanisms": [
+        {
+          "id": "m1",
+          "mechanism": "Signed contribution geometry matters",
+          "prediction": "Equal-magnitude masks exhibit different W-weighted output errors",
+          "decision_if_supported": "Inspect joint signed structure and formulate a deployability bound"
+        },
+        {
+          "id": "m2",
+          "mechanism": "Magnitude suffices for this data regime",
+          "prediction": "Equal-magnitude masks have indistinguishable W-weighted output error distributions",
+          "decision_if_supported": "Keep magnitude as a baseline and test other structural axes"
+        }
+      ],
+      "cheapest_discriminator": "Symbolic counterexample first, then one hypothetical paired small activation trace if required",
+      "negative_outcome_decision": "Do not promote the proxy; reassess representation without changing terminal comparator",
+      "status": "PROPOSED",
+      "evidence": []
+    }
+  ]
 }
