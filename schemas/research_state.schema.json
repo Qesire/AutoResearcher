@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "AutoResearcher research-state v2.1 with optional GAPI/MEAR extensions",
+  "title": "AutoResearcher research-state v2.1 (optional generative-first exploration seeds)",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -792,6 +792,66 @@
                   "type": "string"
                 }
               }
+            }
+          }
+        }
+      }
+    },
+    "exploration_seeds": {
+      "type": "array",
+      "description": "Lightweight ideas before experiment registration. No terminal criterion link or competing mechanism quota; sketches are not observations.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "question",
+          "possible_mechanism"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "question": {
+            "type": "string",
+            "minLength": 1
+          },
+          "possible_mechanism": {
+            "type": "string",
+            "minLength": 1
+          },
+          "observation": {
+            "type": "string"
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "possible_falsifier": {
+            "type": "string"
+          },
+          "next_inspection": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "SKETCH",
+              "REFINED",
+              "ARCHIVED"
+            ]
+          },
+          "related_prior_branch_id": {
+            "type": "string"
+          },
+          "reference_locators": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
             }
           }
         }
