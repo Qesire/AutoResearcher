@@ -78,6 +78,11 @@ def validate_state(data: dict, schema_path: Path | None = None) -> None:
         if d["route"] == "EXPERIMENT" and not d.get("experiment_ids"):
             raise ResearchStateError("EXPERIMENT decision must link an experiment")
 
+    # Exploration sketches are deliberately independent of registered criteria:
+    # creativity needs a cheap record before hypotheses become tested actions.
+    # Their schema intentionally has no OBSERVED status or test-evidence gate.
+    unique(data.get("exploration_seeds", []), "exploration seed")
+
     # Optional v2.1-compatible GAPI/MEAR extension. It is not a model-performance
     # oracle; it checks references and prevents simple evidence/status promotion.
     contract = data.get("goal_contract")
