@@ -1,8 +1,8 @@
 # AutoResearcher — GPT-6 mechanism-first research workflow
 
-A portable, **research-methodology** package for Codex and ChatGPT Projects. Version **v2.1** (2026-10-16). This repository is the canonical source of the protocol. It is **not yet** an autonomous experiment executor or a demonstrated improvement to GPT-6.
+A portable, **research-methodology** package for Codex and ChatGPT Projects. Protocol **v2.2** (2026-10-22; research-state schema remains v2.1-compatible). This repository is the canonical source of the protocol. It is **not yet** an autonomous experiment executor or a demonstrated improvement to GPT-6.
 
-## Four mandatory behaviors
+## Six mandatory behaviors
 
 | Layer | Purpose | Failure prevented |
 | --- | --- | --- |
@@ -10,8 +10,10 @@ A portable, **research-methodology** package for Codex and ChatGPT Projects. Ver
 | DF — Deduction First | Derive exact structure, invariants, bounds and counterexamples before scheduling experiments | Redundant GPU experiments and low-information rejection |
 | CRL — Constructive Resolution Loop | Turn decision-relevant uncertainty into proofs, counterexamples, inspections or discriminating experiments | Defensive epistemic paralysis |
 | MNG — Mechanism-first Novelty Gate | Derive research candidates from the discovered mechanism, then compare with nearest prior work and classical controls | Defaulting to popular ready-made methods instead of discovery |
+| GAPI — Goal Alignment and Proxy Integrity | Keep the scientific north star, terminal checks and temporary metrics separate | Local loss chasing and unannounced goal drift |
+| MEAR — Mechanism Expansion and Anti-Defensive Research | Use precise negative scopes, competing mechanisms and cheapest discriminators to expand the actual search space | Defensive stalling, sunk-cost retuning and hollow method proliferation |
 
-**Central invariant:** actual computational flow → mathematical structure → only residual empirical unknowns → mechanism-derived proposals → independent validation. A confounder is not a completed research task. Known techniques can serve as baselines or diagnostic tools, not unexamined novelty claims.
+**Central invariant:** immutable goal/terminal comparator → actual computational flow → mathematical structure → only residual empirical unknowns → mechanism-derived proposals → independent validation. Discovery can outlive a rejected candidate; no local proxy redefines the goal. A confounder is not a completed research task. Known techniques can serve as baselines or diagnostic tools, not unexamined novelty claims.
 
 ## Codex
 
@@ -26,10 +28,12 @@ In a dedicated ChatGPT Project, copy the contents of [chatgpt/PROJECT_INSTRUCTIO
 ## Files
 
 - [Computational reconstruction](core/OBJECT_RECONSTRUCTION.md), [deduction-first](core/DEDUCTION_FIRST.md), [constructive research loop](core/RESEARCH_PROTOCOL.md), [novelty guard](core/NOVELTY_GATE.md)
+- [Goal and proxy integrity](core/GOAL_ALIGNMENT.md), [anti-defensive mechanism expansion](core/EXPANSION_PROTOCOL.md), [adaptive prompt library](core/PROMPT_PLAYBOOK.md)
+- [FFNDS example (not a measured new run)](examples/FFNDS_GOAL_EXPANSION.md)
 - [Cross-client handoff](core/HANDOFF_FORMAT.md), [v2.0 migration](core/MIGRATION_v2_to_v21.md)
 - [Research state JSON Schema](schemas/research_state.schema.json) and [semantic validator](scripts/validate.py)
 - [Illustrative planned-experiment state](examples/research_state.json), [illustrative deduction-only state](examples/deduction_only_state.json), [human handoff example](examples/HANDOFF.md)
-- [Behavioral evaluation cases](tests/BEHAVIOR_EVALUATION.md), [unit tests](tests/test_validate.py), [CI workflow](.github/workflows/validate.yml)
+- [Behavioral evaluation cases](tests/BEHAVIOR_EVALUATION.md), [unit tests](tests/test_validate.py), [goal/expansion regression tests](tests/test_research_expansion.py), [CI workflow](.github/workflows/validate.yml)
 
 ## Local checks
 
@@ -41,15 +45,15 @@ python scripts/validate.py examples/research_state.json examples/deduction_only_
 python -m unittest discover -s tests -p 'test_*.py' -v
 ~~~
 
-The examples are **fictional illustrations, not real experiments**. Schema validation catches malformed records and selected false status transitions, not mathematical mistakes, literature novelty, unverified citations or actual AI research behavior. Evaluate GPT-6 with the cases in tests/BEHAVIOR_EVALUATION.md before relying on the protocol.
+The examples are **fictional illustrations, not real experiments**. Schema validation catches malformed records, optional goal/branch/move reference errors and selected false status transitions, not mathematical mistakes, literature novelty, unverified citations or actual AI research behavior. Evaluate GPT-6 with the cases in tests/BEHAVIOR_EVALUATION.md before relying on the protocol.
 
 ## Recommended usage
 
 1. Pin actual source revision and reconstruct the full relevant computational path plus the focal subgraph.
-2. Derive exact structure, conditional theorems and counterexamples, stopping solved subquestions without unnecessary experiments.
-3. Keep at most a few falsifiable competing mechanisms and run minimal causal probes only for residual unknowns.
-4. Independently derive an intervention, inspect nearest prior work, compare matched controls and instrument real outcome metrics.
-5. Save provenance and failure paths in a project-specific research state, validate it, and version changes in Git.
+2. State the long-term research goal and terminal evaluator, separating proxies and one-off registered gates. Derive exact structure, conditional theorems and counterexamples, stopping solved subquestions without unnecessary experiments.
+3. Keep at most a few non-isomorphic competing mechanisms, discriminate using the cheapest proof or causal probe, and respect the exact rejection scope of past experiments.
+4. Independently derive a structural intervention distinct from the nearest failed action, inspect nearest prior work, compare matched controls and bridge every claimed proxy gain to the real outcome.
+5. Save provenance, scoped failure paths, optional goal_contract/research_moves and claimed evidence levels in project research state. Validate and version in Git.
 
 This repository contains no private cluster credentials, proprietary datasets or actual FFN experimental measurements. Preserve provenance and obtain authorization before spending compute or modifying external systems.
 
