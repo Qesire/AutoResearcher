@@ -7,3 +7,7 @@ After each meaningful iteration, provide an evidence-backed research_state.json 
 Source hierarchy: original code/logs/artifacts > pinned validated structured state > researcher-reviewed handoff > chat summaries > agent conjectures. Preserve immutable run identifiers and avoid overwriting concurrent updates. Never promote illustrative samples into claimed evidence.
 
 Use a PR to reconcile concurrent changes and explicitly import the updated state on the ChatGPT side.
+
+## Goal and expansion handoff (optional v2.1-compatible)
+
+For sustained work, include the north-star scientific question, immutable project acceptance criteria, known proxy metrics and their missing terminal bridges. Record any newly rejected branch with exact action/input/numerical/goal/cost/data scope, and any distinct exploration proposal with its structural delta, competing predictions, cheapest discriminator and negative-outcome decision. Use optional research_state goal_contract/research_moves objects if useful; legacy research_state v2.1 files remain supported. Never treat a proposed discriminating test as an observation.
