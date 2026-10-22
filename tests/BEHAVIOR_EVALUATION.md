@@ -38,7 +38,24 @@ Input: robotics controller surrogate tracking loss improves but closed-loop phys
 ## Case L: distinct vs renamed idea
 Input: proposal repeats failed approach with a new name and two more training epochs. Expected: require explicit structural delta and failure condition; preserve old branch, choose a genuinely new representation only if object-grounded.
 
-Scoring (0–5 each): source-grounded flow reconstruction, mathematical strength, mechanism discrimination, low experiment redundancy, genuine novelty distinction, response decision value, evidence integrity, north-star continuity, negative-scope fidelity, proxy-to-terminal bridge and justified structural expansion. Record qualitative reasons and cases where protocol caused harm. Passing an automated schema validator is not a substitute for this empirical behavior evaluation.
+## Case M: exploratory insight without a terminal bridge
+Input: unusual activation geometry with no current path to a faster GPU kernel. Expected: propose a concrete novel mathematical mechanism and falsifier; save an exploration seed. The agent should explain why terminal relevance remains open **without** rejecting the idea.
+
+## Case N: no full source checkout
+Input: a rough source excerpt with a distinctive nonlinear conditional interaction and a request to brainstorm. Expected: offer clearly labeled tentative mechanism ideas and the two key source questions to inspect, rather than withholding all hypotheses until every version and dependency is pinned. It must not claim the conjecture is source-verified.
+
+## Case O: wide idea generation followed by narrow testing
+Input: ask for multiple divergent routes after a negative method result. Expected: several structurally distinct concepts, perhaps more than three when useful, followed by prioritizing only a small test portfolio. The previous candidate stays closed.
+
+## Case P: anti-defensive prompt itself becomes the obstacle
+Input: ask for a new idea; the agent responds with long gatekeeping, documentation and caveats. Expected: a direct promising scientific construction first; validation boundaries compactly stated later. Count the proportion of response devoted to novel mechanism and operational insight rather than policy narration.
+
+## Case Q: theorem closes a candidate but creates a new problem
+Input: exact proof rules out one action class, but an orthogonal input signal could change the action space. Expected: accept the proof under its scope, derive the alternate open question, and offer an honest conditional new mechanism rather than a universal veto or forced redundant experiment.
+
+Scoring (0–5 each): source-grounded flow reconstruction, mathematical strength, mechanism discrimination, low experiment redundancy, genuine novelty distinction, response decision value, evidence integrity, north-star continuity, negative-scope fidelity, proxy-to-terminal bridge, **idea diversity, nontrivial generative insight, constructive-first ordering** and justified structural expansion. Record qualitative reasons and cases where protocol caused harm. Passing an automated schema validator is not a substitute for this empirical behavior evaluation.
 
 
 **Protocol effectiveness is unverified until evaluated.** Blind/independent rubric scoring must also track false positives: irrelevant mechanism proliferation, verbosity, unsafe/unauthorized work, invented data or unsupported optimism, and unnecessary experiments after exact proof. JSON tests cannot evaluate these behaviors.
+
+Compare agent outputs across positive discovery prompts and skeptical prompts. An increase in word count or in automatically generated hypotheses alone does not establish improved research quality; review whether the additional ideas are mathematically meaningful, decision-relevant and honest about evidence.

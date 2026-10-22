@@ -190,5 +190,35 @@
       "status": "PROPOSED",
       "evidence": []
     }
+  ],
+  "exploration_seeds": [
+    {
+      "id": "seed-signed",
+      "question": "Can cancellation among signed output contributions change which channels are worth retaining?",
+      "possible_mechanism": "Equal activation norms can lead to different output cancellation if projection directions differ.",
+      "assumptions": [
+        "Symbolic linear projection with signed contributions"
+      ],
+      "possible_falsifier": "A restricted projection class where contribution vectors are mutually orthogonal or identical in sign",
+      "status": "SKETCH"
+    },
+    {
+      "id": "seed-rep",
+      "question": "Can a different output basis expose a cheaper support operation?",
+      "possible_mechanism": "Represent the projection with a shared subspace and a small residual only where structural alignment warrants it.",
+      "status": "SKETCH"
+    },
+    {
+      "id": "seed-timing",
+      "question": "Can an earlier observable correlate with the expensive output-coordinate decision?",
+      "possible_mechanism": "A low-cost statistic computed before the projection could predict when a subset matters; oracle post-projection scores may not be deployable.",
+      "status": "SKETCH"
+    },
+    {
+      "id": "seed-execution",
+      "question": "When does an abstract logical support map onto actual skipped machine work?",
+      "possible_mechanism": "The relationship may be controlled by tile geometry and packing cost rather than logical zero fraction.",
+      "status": "SKETCH"
+    }
   ]
 }

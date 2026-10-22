@@ -1,8 +1,14 @@
 # AutoResearcher — GPT-6 mechanism-first research workflow
 
-A portable, **research-methodology** package for Codex and ChatGPT Projects. Protocol **v2.2** (2026-10-22; research-state schema remains v2.1-compatible). This repository is the canonical source of the protocol. It is **not yet** an autonomous experiment executor or a demonstrated improvement to GPT-6.
+A portable, **research-methodology** package for Codex and ChatGPT Projects. Protocol **v2.3** (2026-10-22; research-state schema remains v2.1-compatible). This repository is the canonical source of the protocol. It is **not yet** an autonomous experiment executor or a demonstrated improvement to GPT-6.
 
-## Six mandatory behaviors
+## Discovery-first, validation-strong workflow
+
+**Explore → Ground → Test/Build → Claim.** Early hypotheses are allowed to be ambitious and to lack a terminal-performance bridge; they remain labeled speculative. Source-matched mathematics focuses the strongest ones. Registered experiments and published/deployed claims receive strict evidence checks. The protocol is a **creative research compass**, not a checklist restricting imagination.
+
+A surprising negative result should trigger a new structural question. Generate broadly at negligible cost, then narrow the experiment budget to the most discriminating comparisons. [Generative research prompts](core/PROMPT_PLAYBOOK.md) start with S0 and X1, not with a veto checklist. Brainstorming ideas can be kept in optional exploration_seeds; the original goal_contract/research_moves and experiment records support later registration.
+
+## Six complementary behaviors
 
 | Layer | Purpose | Failure prevented |
 | --- | --- | --- |
@@ -10,10 +16,10 @@ A portable, **research-methodology** package for Codex and ChatGPT Projects. Pro
 | DF — Deduction First | Derive exact structure, invariants, bounds and counterexamples before scheduling experiments | Redundant GPU experiments and low-information rejection |
 | CRL — Constructive Resolution Loop | Turn decision-relevant uncertainty into proofs, counterexamples, inspections or discriminating experiments | Defensive epistemic paralysis |
 | MNG — Mechanism-first Novelty Gate | Derive research candidates from the discovered mechanism, then compare with nearest prior work and classical controls | Defaulting to popular ready-made methods instead of discovery |
-| GAPI — Goal Alignment and Proxy Integrity | Keep the scientific north star, terminal checks and temporary metrics separate | Local loss chasing and unannounced goal drift |
-| MEAR — Mechanism Expansion and Anti-Defensive Research | Use precise negative scopes, competing mechanisms and cheapest discriminators to expand the actual search space | Defensive stalling, sunk-cost retuning and hollow method proliferation |
+| GAPI — Goal Alignment and Proxy Integrity | Use the long-term question as a compass; permit speculative insights before deployment evidence | Local loss chasing *without* censoring early scientific discovery |
+| MEAR — Mechanism Expansion and Anti-Defensive Research | Actively invent new mathematical representations and explanations; then test the most informative ones | Defensive stalling, sunk-cost retuning and hollow method proliferation |
 
-**Central invariant:** immutable goal/terminal comparator → actual computational flow → mathematical structure → only residual empirical unknowns → mechanism-derived proposals → independent validation. Discovery can outlive a rejected candidate; no local proxy redefines the goal. A confounder is not a completed research task. Known techniques can serve as baselines or diagnostic tools, not unexamined novelty claims.
+**Central invariant:** scientific ambition → creative mechanism hypotheses → grounded computation and mathematics → decisive discriminators → independent validation for registered and terminal claims. A closed candidate does not close a new discovery path. A confounder is not a completed research task. Known techniques can serve as baselines or diagnostic tools, not unexamined novelty claims.
 
 ## Codex
 
@@ -45,7 +51,7 @@ python scripts/validate.py examples/research_state.json examples/deduction_only_
 python -m unittest discover -s tests -p 'test_*.py' -v
 ~~~
 
-The examples are **fictional illustrations, not real experiments**. Schema validation catches malformed records, optional goal/branch/move reference errors and selected false status transitions, not mathematical mistakes, literature novelty, unverified citations or actual AI research behavior. Evaluate GPT-6 with the cases in tests/BEHAVIOR_EVALUATION.md before relying on the protocol.
+The examples are **fictional illustrations, not real experiments**. Schema validation catches malformed records, optional goal/branch/move reference errors, duplicate exploration seeds and selected false status transitions, not mathematical mistakes, literature novelty, unverified citations or actual AI research behavior. Evaluate GPT-6 with the cases in tests/BEHAVIOR_EVALUATION.md before relying on the protocol.
 
 ## Recommended usage
 
@@ -53,9 +59,9 @@ The examples are **fictional illustrations, not real experiments**. Schema valid
 2. State the long-term research goal and terminal evaluator, separating proxies and one-off registered gates. Derive exact structure, conditional theorems and counterexamples, stopping solved subquestions without unnecessary experiments.
 3. Keep at most a few non-isomorphic competing mechanisms, discriminate using the cheapest proof or causal probe, and respect the exact rejection scope of past experiments.
 4. Independently derive a structural intervention distinct from the nearest failed action, inspect nearest prior work, compare matched controls and bridge every claimed proxy gain to the real outcome.
-5. Save provenance, scoped failure paths, optional goal_contract/research_moves and claimed evidence levels in project research state. Validate and version in Git.
+5. Save preliminary ideas as optional exploration_seeds; after a candidate matures, record scoped failures, optional goal_contract/research_moves, registered controls and evidence. Validate and version in Git.
 
-This repository contains no private cluster credentials, proprietary datasets or actual FFN experimental measurements. Preserve provenance and obtain authorization before spending compute or modifying external systems.
+This repository contains no private cluster credentials, proprietary datasets or actual FFN experimental measurements. Its prompts have passed static/state checks, but their effect on real GPT creativity and scientific correctness remains an empirical question requiring controlled behavior evaluations. Preserve provenance and obtain authorization before spending compute or modifying external systems.
 
 ## Research references
 
