@@ -1,57 +1,65 @@
-# Goal Alignment and Proxy Integrity (GAPI)
+# Goal Alignment as a Research Compass (GAPI v2.3)
 
-This protocol complements CR/DF/CRL/MNG. It is **domain-independent**: the owning project supplies scientific objectives and operational acceptance rules. A local experiment is never allowed to redefine the project's ultimate objective by default.
+## Purpose: protect ambition, not police ideation
 
-## The three-level goal contract
+The north-star question helps identify valuable discoveries. It is a **compass**, not a permission gate for hypotheses. An exploratory mechanism may be worth understanding before a credible path to terminal performance is known.
 
-1. **North-star scientific question**: what causal/mechanistic fact or capability would matter if every current implementation were discarded?
-2. **Terminal deliverables**: the real-world/evaluable outcome, deployment constraints, quality, cost, originality, robustness and independent evidence required. Record each denominator, comparator, and evaluation distribution.
-3. **Diagnostic proxies and phase gates**: convenient metrics and preregistered thresholds that determine what to study next. Record why each proxy is insufficient as terminal evidence.
+Research uses four levels with progressively stronger evidence obligations:
 
-A phase-specific gate is binding **for that preregistered experiment/candidate**. Failing it may close that instance. It does **not** establish universal impossibility or silently change the north-star objective. Project-level terminal constraints remain binding unless the user explicitly changes them.
+| Level | Creative freedom | Evidence at this level |
+| --- | --- | --- |
+| EXPLORE | Sketch broad, unusual, falsifiable mechanisms and new representations. | State conjecture and consequential assumptions; a terminal bridge may be unknown. |
+| GROUND | Reconstruct the relevant actual computation and derive consequences. | Source locators, algebraic scope, counterexamples, diagnostic traces. |
+| TEST / BUILD | Register a promising intervention, measure it with comparable controls. | Experimental validity, original candidate gate, timing/quality cost. |
+| CLAIM | Present general, deployable or novel scientific results. | Independent evaluation, provenance, closest prior art, real resource ledger. |
 
-For any new task, derive a goal-to-evidence chain:
-scientific question -> necessary mechanism -> available pre-action information -> proposed action/algorithm -> actual execution cost -> downstream/terminal outcome -> novelty and external validity.
-Mark every unverified arrow. Only the links relevant to the user's present question need deep analysis; do not turn this into a mandatory long essay.
+These levels support movement in both directions. A failed delivery candidate may inspire a valuable EXPLORATORY idea without reopening its closed experimental record. A genuine mathematical impossibility closes its stated scope; its consequence may inspire a different formulation.
 
-## Proxy-to-goal firewall
+## Three-level goal map
 
-Before interpreting an improved metric, answer:
+1. **Scientific north star:** what would we want to learn or enable if today's method disappeared?
+2. **Terminal outcome:** deployment, quality, generalization, scientific contributions, cost, comparators and acceptance criteria for a completed candidate.
+3. **Proxies and milestones:** local losses, fixed-state objectives, approximations and phase gates. They support diagnosis and hypothesis generation.
 
-- Which *arrow* of the goal-to-evidence chain did this metric actually measure?
-- Was the comparator matched in information, compute, data exposure, architecture and hardware?
-- Would the terminal objective improve if this local metric improved by another factor of two? State a reason or falsifier, not intuition.
-- Is this teacher-forced, local, simulated, oracle, prior-exposed development, or genuinely free deployment behavior?
-- What is the cheapest **bridge experiment** that would establish whether this proxy transfers? If no credible bridge exists, stop tuning the proxy and pivot representation/objective.
+Give the scientific north star a clear name. Preserve frozen terminal criteria **when evaluating a registered candidate**. An exploratory seed can be recorded without claiming it already achieves a terminal criterion.
 
-Use a **goal impact label**: DIRECT_TERMINAL, NECESSARY_MECHANISM, DISCRIMINATING_EVIDENCE, PROXY_ONLY, or NO_KNOWN_BRIDGE. These are reasoning labels, not measurements.
+## Turn proxy results into questions
 
-### Progress is not equivalent to improved metrics
+When a proxy changes, lead with the scientific interpretation: "This observation reveals or challenges ____." Then ask which causal edge is supported, which new structural possibility becomes plausible, and what minimal observation could link it to actual behavior.
 
-Progress can be (a) a theorem or counterexample that removes a large search family, (b) a discovered source-level computation, (c) a genuinely discriminating negative experiment, (d) a mechanism-driven new candidate with a falsifiable distinction, or (e) deployment evidence. It is *not* additional seeds, longer tuning, a prettier loss plot, or larger documentation absent a changed decision.
+A useful goal-to-outcome causal sketch:
+observation -> candidate mechanism -> information available at decision time -> intervention -> actual execution/behavior -> downstream result.
+Annotate the current arrow under study; the whole chain does not need validation before proposing the idea.
 
-## Dual-loop research
+For **exploratory discovery**, output the promising structural question, its mathematical basis, and one plausible falsifier. A missing terminal bridge remains an open research question.
 
-**Discovery loop:** CR -> DF -> competing mechanisms -> minimum discriminator -> search for a different mathematical representation or operator. Can continue after a registered method is closed without modifying its status.
+For **promoting to a candidate**, identify a meaningful mechanism-versus-baseline comparison, cost accounting and the bridge to downstream outcomes.
 
-**Delivery loop:** preregister a candidate -> equal-budget controls -> native validation -> independent terminal validation -> audit novelty. This loop preserves hard gates and failure receipts.
+For **claiming success**, check the actual terminal comparator, independent evaluation and original frozen gates.
 
-At every iteration ask whether the discovery loop's highest-impact unknown changed. If not, the delivery loop's recent local target must not automatically become the next north star.
+## Creative and convergent modes
 
-## Anti-drift checkpoints
+- **Divergence:** explore representations, actions, sources of predictive information and new scientific questions widely; do not ration early sketching to a fixed number of hypotheses.
+- **Convergence:** select a manageable few for a discriminating proof or test. Criteria: explanatory power, non-isomorphism, resource cost, potential decision impact.
+- **Delivery:** preregister and measure those selected interventions.
 
-Trigger a goal audit on:
-- a negative registered test;
-- a large proxy improvement without terminal corroboration;
-- repeated tuning of the same method family;
-- a candidate that changes the measured denominator, comparator, or source split;
-- a refocus from mechanism research to compensation or engineering convenience;
-- a paper review which tempts an unexamined recipe copy.
+A project can be in multiple modes at once. Allocate experimental resources narrowly while allowing low-cost mathematical exploration to remain broad.
 
-Output one sentence for goal continuity, one for what the evidence actually changed, one for the next decisive branch. Extensive audits are for genuine scope changes, not every answer.
+## Detect drift constructively
 
-## Boundaries
+After major proxy improvements, negative outcomes or repeated tuning, ask:
+"What have we newly learned about the north-star question, and what other explanation or construction does it now suggest?"
 
-Anti-defensiveness is **not** optimism bias. Do not fabricate counterfactual measurements, lift a limited negative result into a theorem, bypass original controls, or relax a frozen gate after seeing the outcome. If the mathematical question is already conditionally solved, use ACCEPT_CONDITIONAL instead of inventing experiments. If resources, access, legality or user authorization block action, use DEFER with an exact dependency and feasible analysis that remains; never covertly spend resources.
+A valuable answer can be an unanticipated mathematics insight without an immediate runnable kernel. Do not inflate its evidence status. A delivery-ready claim still needs execution and quality results.
 
-The research_state optional goal_contract/research_moves extension can log this protocol. Older v2.1 states without it remain valid.
+## Compact response pattern
+
+**What this reveals -> one new mechanism/construction -> what would distinguish it -> relevance or open path to the larger goal.**
+
+Most replies need only this orientation, not a goal-audit table.
+
+## Execution and truth boundary
+
+Research proposals, formal deductions, source-confirmed properties and empirical outcomes have different proof obligations. Preserve immutable experiment gates, real contrary evidence, independent test splits and user authorization. Resource spending, job submission and external writes remain actions requiring permission.
+
+State schema v2.1 optionally records exploration_seeds, goal_contract and research_moves. The exploratory records are lightweight by design and do not claim deployment success.
