@@ -1,19 +1,17 @@
 ---
 name: mechanism-research
-description: Reconstruct actual model computation, derive structural results and investigate remaining unknowns before proposing novel interventions.
+description: Examine actual computations, derive structural mathematics and build falsifiable mechanism-led scientific candidates.
 ---
 # Mechanism Research (CR / DF / CRL / MNG)
 
-1. MAP_FLOW: inspect version-pinned source code, configurations, tensor I/O, shapes and semantics, operator ordering, branches, state, nonlinearities, residuals and downstream consumers. Explicitly mark unknown edges.
-2. DERIVE: translate verified flow to equations. Work out exact identities, conditions, bounds, nullspaces, sensitivities, counterexamples and constraints. A mathematical answer terminates the scoped subquestion; do not spend GPU experiments restating it.
-3. DISCRIMINATE: for genuine empirical unknowns, propose distinct mechanisms with concrete predictions and choose the cheapest decisive intervention, static check or experiment. Identify controls, measurements and possible next decisions.
-4. INNOVATE: independently derive methods from observed computational structure *before* defaulting to standard smoothing, regularization, pruning, EMA or distillation recipes. Audit nearest prior work to establish any genuine contribution. Known approaches remain appropriate baselines or diagnostic probes.
-5. VERIFY: criticism must identify an inference at risk and provide a test, counterexample or repair. Do not terminate on unverified caveats. Do not suppress real contradictions.
-6. RECORD: preserve proof assumptions, source locators, raw evidence, negative branch lessons, novelty status and next action.
-7. GOAL_CHECK: when a local metric improves, or a registered candidate fails, verify that the project's true scientific question and terminal evaluation have not been replaced by this metric. Distinguish scoped closure from general mechanism rejection. On drift, invoke research-expansion skill (GAPI/MEAR) and the task-specific prompt playbook. Never confuse planned experiments with observed runs.
+1. **NOTICE:** identify a surprising data pattern, structural tension or scientific question worth understanding. An explicitly labeled exploratory conjecture may precede full source inspection.
+2. **MAP_FLOW:** pin relevant code/config/trace and rebuild the decision-critical subgraph, tensor semantics, branching, quantization and downstream effects. Record assumptions where a broader graph is not yet verified.
+3. **DERIVE:** translate focal computation to mathematics and find identities, geometric interactions, noncommutativity, bounds or constructive counterexamples; use conditional theorems to release effort for new open questions.
+4. **EXPAND:** explore a distinctive representation or action based on the derived structure. Use the research-expansion skill when seeking a new research direction or when a failed candidate reveals a new obstacle.
+5. **DISCRIMINATE:** select key hypotheses and use the smallest proof, source check, reuse of artifacts, or controlled empirical intervention that changes the mechanism decision.
+6. **BUILD & COMPARE:** where appropriate, define a feasible intervention and matched classic/prior-art baseline. Preserve actual numerical and GPU execution costs.
+7. **RECORD:** store source/proof/measurement status, exact closed candidate scopes and open exploration seeds separately.
 
-Adaptive routes: MAP_FLOW, DERIVE, STATIC_CHECK, EXPERIMENT, DESIGN, REPAIR, PIVOT, ACCEPT_CONDITIONAL, DEFER.
+Adaptive routes: MAP_FLOW, DERIVE, STATIC_CHECK, EXPERIMENT, DESIGN, REPAIR, PIVOT, ACCEPT_CONDITIONAL, DEFER. A closed mathematical subquestion does not close unrelated scientific inquiry.
 
-Output: verified object and scope -> strongest mathematical/mechanistic result -> remaining unknown -> cheapest resolving action with predicted decision impact. Do not invent data, formal proof status or literature novelty.
-
-On negative evidence, repeated parameter tuning, unclear causal attribution, or missing proxy-to-deployment bridge, read core/GOAL_ALIGNMENT.md and core/EXPANSION_PROTOCOL.md and use .agents/skills/research-expansion/SKILL.md. The mechanism skill remains the authority for source-grounded math and code reconstruction. The expansion skill does not authorize new model runs or modify frozen gates.
+**Answer with the new scientific result or hypothesis first**; then its best evidence or assumptions, the decisive counterexample and next useful move. Actual model jobs and external writes require authorization. See core/GOAL_ALIGNMENT.md, core/EXPANSION_PROTOCOL.md and core/PROMPT_PLAYBOOK.md.
