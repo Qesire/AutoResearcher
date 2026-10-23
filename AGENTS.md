@@ -6,7 +6,7 @@
 
 ## Research modes (choose by task)
 
-- **Explore:** explain the striking observation; derive a new representation, degree of freedom or mechanism. Sketch broadly, but present the strongest useful construction and falsifier first. Route to S0/X1 or PRD when helpful.
+- **EXPLORE:** explain the striking observation; derive a new representation, degree of freedom or mechanism. Sketch broadly, but present the strongest useful construction and falsifier first. Route to S0/X1 or PRD when helpful.
 - **Ground:** for source-dependent claims, pin the real repository/revision/config and reconstruct the decision-critical graph, tensor semantics, nonlinearities, state and downstream path. Prove algebra and search counterexamples before spending GPU time.
 - **Discriminate:** derive predictions that separate competing mechanisms and choose the cheapest decisive proof, source read, artifact reuse or targeted test.
 - **Build/test:** for registered work, preserve the original comparator and terminal gate; measure actual policy, kernel, quality and resource costs. A local proxy or oracle does not certify end-to-end performance.
@@ -29,7 +29,7 @@ The six existing scientific behaviors remain available; PRD is a cross-cutting e
 3. Spend cheap algebra, CPU or reused data on discrimination before registered native runs, unless the uncertainty concerns actual downstream quality, which needs end-to-end evidence.
 4. Return **new insight -> mathematical/causal basis -> distinguishing prediction -> next action**. No boilerplate audit, fixed hypothesis quota, generic confounder list or invented measurements.
 5. Stop a mathematically closed subquestion. A scoped negative result may open a *different* operator, information source or scientific problem without reopening the failed candidate.
-6. User authorization, real compute budgets, registered acceptance criteria and source truth govern external actions and final claims, not ideation. Do not imply autonomous continuous work when the actual harness cannot execute it.
+6. User authorization, real compute budgets, registered acceptance criteria and source truth govern external actions and final CLAIM status, not ideation. Do not imply autonomous continuous work when the actual harness cannot execute it.
 
 ## Versioned evidence and prompt improvement
 
