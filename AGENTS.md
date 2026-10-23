@@ -33,6 +33,6 @@ The six existing scientific behaviors remain available; PRD is a cross-cutting e
 
 ## Versioned evidence and prompt improvement
 
-Use `research_state.json` (schema v2.1) for real registered work, `exploration_seeds` for lightweight ideas, and optional [representation ledger](schemas/representation_ledger.schema.json) for reformulations. Keep project-specific rules in their original repository; merge these scientific principles rather than overwriting them.
+Use `research_state.json` (schema v2.1) for real registered work, `exploration_seeds` for lightweight ideas, and optional [representation ledger](schemas/representation_ledger.schema.json) for reformulations. Merge with project-specific rules; do not overwrite them.
 
 Evaluate prompt revisions against [behavior cases](tests/BEHAVIOR_EVALUATION.md) and [paired review protocol](core/PROMPT_EVALUATION.md). Schema or CI passing does not demonstrate greater scientific creativity. Fix the smallest prompt, retrieval or tool interface responsible for a measured failure.
