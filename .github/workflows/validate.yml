@@ -18,5 +18,7 @@ jobs:
         run: |
           python scripts/validate.py examples/research_state.json
           python scripts/validate.py examples/deduction_only_state.json
+      - name: Validate optional representation ledger
+        run: python scripts/validate_representation.py examples/representation_ledger.json
       - name: Run semantic regression suite
         run: python -m unittest discover -s tests -p 'test_*.py' -v
