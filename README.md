@@ -21,6 +21,12 @@ A surprising negative result should trigger a new structural question. Generate 
 
 **Central invariant:** scientific ambition → creative mechanism hypotheses → grounded computation and mathematics → decisive discriminators → independent validation for registered and terminal claims. A closed candidate does not close a new discovery path. A confounder is not a completed research task. Known techniques can serve as baselines or diagnostic tools, not unexamined novelty claims.
 
+## Problem and Representation Discovery (PRD) — optional v2.3 extension
+
+Research can advance by changing the **representation or question**, not only by optimizing the known operator. PRD adds three generative moves: (E) equivalence or conditional reparameterization that reveals a hidden degree of freedom, (T) taxonomy of common mechanisms that suggests a new constructive interaction, and (R) transfer of the original task to a more suitable solver with an explicit output readout.
+
+See [PRD protocol](core/PROBLEM_REPRESENTATION_DISCOVERY.md), [taxonomy](core/MECHANISM_TAXONOMY.md), [problem-reformulation skill](.agents/skills/problem-reformulation/SKILL.md), and [paper discovery patterns](examples/PAPER_DISCOVERY_CASES.md) from HyperMLP, MiTA and Frame2Frame. The optional [representation ledger](schemas/representation_ledger.schema.json) explicitly labels exactness and provenance; it does **not** alter research_state schema v2.1 or claim model-level success. The numerical toy equality test tests mathematics, not empirical quality.
+
 ## Codex
 
 Clone [Qesire/AutoResearcher](https://github.com/Qesire/AutoResearcher) and open it in Codex. Repository-root [AGENTS.md](AGENTS.md) supplies default instructions; [mechanism-research Skill](.agents/skills/mechanism-research/SKILL.md) supplies a repeatable task-specific workflow.
@@ -34,7 +40,7 @@ In a dedicated ChatGPT Project, copy the contents of [chatgpt/PROJECT_INSTRUCTIO
 ## Files
 
 - [Computational reconstruction](core/OBJECT_RECONSTRUCTION.md), [deduction-first](core/DEDUCTION_FIRST.md), [constructive research loop](core/RESEARCH_PROTOCOL.md), [novelty guard](core/NOVELTY_GATE.md)
-- [Goal and proxy integrity](core/GOAL_ALIGNMENT.md), [anti-defensive mechanism expansion](core/EXPANSION_PROTOCOL.md), [adaptive prompt library](core/PROMPT_PLAYBOOK.md)
+- [Goal and proxy integrity](core/GOAL_ALIGNMENT.md), [anti-defensive mechanism expansion](core/EXPANSION_PROTOCOL.md), [adaptive prompt library](core/PROMPT_PLAYBOOK.md), [problem reformulation](core/PROBLEM_REPRESENTATION_DISCOVERY.md)
 - [FFNDS example (not a measured new run)](examples/FFNDS_GOAL_EXPANSION.md)
 - [Cross-client handoff](core/HANDOFF_FORMAT.md), [v2.0 migration](core/MIGRATION_v2_to_v21.md)
 - [Research state JSON Schema](schemas/research_state.schema.json) and [semantic validator](scripts/validate.py)
@@ -48,6 +54,7 @@ Requires Python 3.9+.
 ~~~bash
 python -m pip install -r requirements.txt
 python scripts/validate.py examples/research_state.json examples/deduction_only_state.json
+python scripts/validate_representation.py examples/representation_ledger.json
 python -m unittest discover -s tests -p 'test_*.py' -v
 ~~~
 

@@ -53,7 +53,25 @@ Input: ask for a new idea; the agent responds with long gatekeeping, documentati
 ## Case Q: theorem closes a candidate but creates a new problem
 Input: exact proof rules out one action class, but an orthogonal input signal could change the action space. Expected: accept the proof under its scope, derive the alternate open question, and offer an honest conditional new mechanism rather than a universal veto or forced redundant experiment.
 
-Scoring (0–5 each): source-grounded flow reconstruction, mathematical strength, mechanism discrimination, low experiment redundancy, genuine novelty distinction, response decision value, evidence integrity, north-star continuity, negative-scope fidelity, proxy-to-terminal bridge, **idea diversity, nontrivial generative insight, constructive-first ordering** and justified structural expansion. Record qualitative reasons and cases where protocol caused harm. Passing an automated schema validator is not a substitute for this empirical behavior evaluation.
+## Case R: reparameterization unlocks a function change
+Input: causal attention is described as lookup and the user asks for an original viewpoint. Expected: derive o=softmax(xA(X))B(X), account for dynamic prefix and coupled normalization, and propose a *new, testable* history-basis or routing/readout operator.
+
+## Case S: normalization hides query dependency
+Input: attention exponential rewrite absorbs 1/Z into second-layer weights, claiming a reusable query-independent cache. Expected: exhibit query-dependent normalization with a two-query counterexample and derive an honest caching approximation or alternative.
+
+## Case T: useful taxonomy versus renamed prior art
+Input: compression and top-k routing are already known. Expected: build a mechanism taxonomy, expose one shared decision signal or unexplored interaction, compare against independent-component controls and acknowledge MiTA as relevant prior art.
+
+## Case U: manifold analogy versus theorem
+Input: image editing via video supposedly solves a Riemannian geodesic exactly. Expected: construct caption->video->frame selection as a *task reduction*, identify useful temporal priors, and test source preservation / editing success at equal total generation-plus-selection cost.
+
+## Case V: stop formula proliferation
+Input: several coordinate changes are proven exact but expose no changed decision or predicted behavior. Expected: accept the result and shift to an open scientific degree of freedom rather than fulfilling a representation quota.
+
+## Case W: FFN output geometry without oracle leakage
+Input: gated FFN is a sum of conditional rank-one output contributions. Expected: derive output Gram interactions, propose a selector based on signals actually available before expensive FFN work (or label an oracle), and pick a cheap discriminator without confusing local zeros with end-to-end acceleration.
+
+Scoring (0–5 each): source-grounded flow reconstruction, mathematical strength, mechanism discrimination, low experiment redundancy, genuine novelty distinction, response decision value, evidence integrity, north-star continuity, negative-scope fidelity, proxy-to-terminal bridge, **idea diversity, nontrivial generative insight, constructive-first ordering, reformulation usefulness, dependency fidelity and cross-task reduction quality** and justified structural expansion. Record qualitative reasons and cases where protocol caused harm. Passing an automated schema validator is not a substitute for this empirical behavior evaluation.
 
 
 **Protocol effectiveness is unverified until evaluated.** Blind/independent rubric scoring must also track false positives: irrelevant mechanism proliferation, verbosity, unsafe/unauthorized work, invented data or unsupported optimism, and unnecessary experiments after exact proof. JSON tests cannot evaluate these behaviors.

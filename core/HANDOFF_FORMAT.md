@@ -11,3 +11,7 @@ Use a PR to reconcile concurrent changes and explicitly import the updated state
 ## Goal and expansion handoff (optional v2.1-compatible)
 
 For sustained work, include the north-star scientific question, immutable project acceptance criteria, known proxy metrics and their missing terminal bridges. Record any newly rejected branch with exact action/input/numerical/goal/cost/data scope, and any distinct exploration proposal with its structural delta, competing predictions, cheapest discriminator and negative-outcome decision. Use optional research_state goal_contract/research_moves objects if useful; legacy research_state v2.1 files remain supported. Never treat a proposed discriminating test as an observation.
+
+## Optional PRD handoff
+
+When a genuinely reusable problem reformulation was discovered, reference an optional representation_ledger.json alongside (not inside or instead of) research_state.json. For each rewrite record relation type (EXACT / CONDITIONAL / APPROXIMATE / TASK_REDUCTION / ANALOGY), mathematical scope, current-input and time dependencies, provenance, freed design variable, and cheapest discriminator. A mechanism taxonomy or literature relationship is a source of ideas, not an automatically validated novelty claim. Validate with python scripts/validate_representation.py examples/representation_ledger.json. Neither the ledger nor its fictional example changes research_state schema v2.1 or constitutes measured model evidence.

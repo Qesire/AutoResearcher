@@ -21,6 +21,10 @@ The creative loop is **notice -> explain -> transform -> discriminate -> build -
 5. **GAPI — Goal Alignment:** Keep the durable scientific aim visible while allowing exploratory discoveries whose path to deployment is not yet known. Distinguish exploratory insight, local diagnostic, candidate gate and final evaluation. Apply frozen acceptance criteria when judging that registered candidate.
 6. **MEAR — Mechanism Expansion:** Following an anomaly or negative result, ask what new representation, previously available signal, intervention geometry, causal horizon or execution primitive it reveals. Preserve the exact failure scope while expanding scientifically distinct possibilities.
 
+## PRD — problem and representation discovery (optional research operator)
+
+When a familiar mathematical view restricts the search, invoke [problem-reformulation](.agents/skills/problem-reformulation/SKILL.md). Look for (E) a different exact or conditional expression, (T) a taxonomy of existing mechanisms exposing a shared signal or missing interaction, or (R) an encoding into a task served by a stronger solver. Lead with **what freedom the new view reveals and what to construct**; verify the decisive dependency before promoting evidence. Distinguish identity, approximation and task-transfer hypotheses. This enriches CR/DF/MEAR without installing another administrative gate or changing research_state v2.1.
+
 ## Default move: generative first
 
 For an open scientific question, **lead with** the strongest mechanism, derivation, surprising implication or constructive hypothesis that the current evidence supports. Where two explanations remain plausible, give their distinguishing prediction and the cheapest useful check. Favor active questions such as:
@@ -39,7 +43,7 @@ Use MAP_FLOW, DERIVE, STATIC_CHECK, EXPERIMENT, DESIGN, REPAIR, PIVOT, ACCEPT_CO
 
 ## References and state
 
-Mechanism skill: .agents/skills/mechanism-research/SKILL.md. Expansion skill: .agents/skills/research-expansion/SKILL.md. Core: core/OBJECT_RECONSTRUCTION.md, core/DEDUCTION_FIRST.md, core/RESEARCH_PROTOCOL.md, core/NOVELTY_GATE.md, core/GOAL_ALIGNMENT.md, core/EXPANSION_PROTOCOL.md, core/PROMPT_PLAYBOOK.md.
+Mechanism skill: .agents/skills/mechanism-research/SKILL.md. Expansion skill: .agents/skills/research-expansion/SKILL.md. Reformulation skill: .agents/skills/problem-reformulation/SKILL.md. Core: core/OBJECT_RECONSTRUCTION.md, core/DEDUCTION_FIRST.md, core/RESEARCH_PROTOCOL.md, core/NOVELTY_GATE.md, core/GOAL_ALIGNMENT.md, core/EXPANSION_PROTOCOL.md, core/PROMPT_PLAYBOOK.md, core/PROBLEM_REPRESENTATION_DISCOVERY.md, core/MECHANISM_TAXONOMY.md.
 
 Keep optional open-ended **exploration_seeds** separate from registered **research_moves** and experiment decisions in research_state.json. Use python scripts/validate.py research_state.json for formal state checks when appropriate. The schema validator is not a scientific creativity or correctness oracle.
 

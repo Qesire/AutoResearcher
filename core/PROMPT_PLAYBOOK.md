@@ -50,13 +50,27 @@ Prompts are **creative operators**, not a wall of prohibitions. The base agent p
 
 > Report the main discovery or newly established limit first; show the decisive evidence and inference; state the most promising structural question or next discriminator. Keep a short provenance/evidence label and preserve exact failed candidate scope. Make it possible for the next researcher to continue *discovery*, not merely comply with a checklist.
 
+## E10 / Reveal a hidden representation
+
+> Re-express this distinctive computation in a mathematically different form. From its dimensions, state dependencies and normalization, what hidden choice of basis, memory or routing becomes visible? Change that choice into a concrete new operator and a prediction different from the original. Offer a cheap algebraic/CPU check; verify the actual implementation before making a source claim.
+
+## T11 / Construct through a mechanism taxonomy
+
+> Ignore paper labels temporarily. Place nearby methods on axes of information timing, compression/routing, reuse, output geometry and costs. Identify an underused interaction or common signal, then build the smallest mechanism that exploits it. Predict how it differs from a matched independent-components baseline and name the cheapest discriminator.
+
+## R12 / Turn this into a different solvable problem
+
+> Recast the original objective as a trajectory, retrieval, control, geometry or other task with a strong existing solver. Define input encoding, borrowed solver and output readout, then explain what prior becomes available. Produce one example, one failure regime and a low-cost test on the original objective. A plausible task-transfer hypothesis need not be an exact equivalence.
+
 ## How to apply
 
 - Open research or novelty search: S0, then optionally X1.
 - Unexplained negative result: N2 or D1.
-- Strong algebraic structure: M3.
+- Strong algebraic structure: M3, or E10 when a new representation exposes a design freedom.
 - Improvement stuck at local loss: G0, B4 or P7.
 - Downstream dynamics anomaly: T6.
+- Methods sharing a mechanism but not a construction: T11.
+- A strong adjacent solver could change the task: R12.
 - Competition among explanations: C5.
 - Exactly closed question or missing resources: R8.
 - Research iteration completed: V9.

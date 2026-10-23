@@ -14,6 +14,8 @@ description: Generate original mechanism-level hypotheses from unexpected eviden
 6. **ADVANCE:** promote mature ideas to registered experiments with matched controls, resource costs and original success criteria. Preserve exact closed experiment scopes and truthful evidence levels.
 7. **LEAVE A USEFUL TRACE:** record an optional lightweight exploration_seed; registered research_moves and measured artifacts use their stricter state fields.
 
+When a better representation or alternative task is the opening, use problem-reformulation skill to construct and discriminate, without turning reformulation into a mandatory gate.
+
 For actual implementation, use mechanism-research skill, core/OBJECT_RECONSTRUCTION.md, core/DEDUCTION_FIRST.md, core/GOAL_ALIGNMENT.md, core/EXPANSION_PROTOCOL.md and on-demand core/PROMPT_PLAYBOOK.md. Discovery is broad; external writes and resource-consuming actions remain authorized and measured.
 
 **Preferred response:** novel mechanism/insight first -> one mathematical or causal derivation -> revealing falsifier/next test -> relationship to the research aim. Keep evidence boundaries concise.
