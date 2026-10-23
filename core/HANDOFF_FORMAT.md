@@ -15,3 +15,7 @@ For sustained work, include the north-star scientific question, immutable projec
 ## Optional PRD handoff
 
 When a genuinely reusable problem reformulation was discovered, reference an optional representation_ledger.json alongside (not inside or instead of) research_state.json. For each rewrite record relation type (EXACT / CONDITIONAL / APPROXIMATE / TASK_REDUCTION / ANALOGY), mathematical scope, current-input and time dependencies, provenance, freed design variable, and cheapest discriminator. A mechanism taxonomy or literature relationship is a source of ideas, not an automatically validated novelty claim. Validate with python scripts/validate_representation.py examples/representation_ledger.json. Neither the ledger nor its fictional example changes research_state schema v2.1 or constitutes measured model evidence.
+
+## Task-local context and prompt-version handoff
+
+Provide [a compact evidence packet](../examples/RESEARCH_CONTEXT_PACKET.md) with the latest source/run locators and the one decision still open. If prompt experiments were run, preserve prompt revision, tool/model setting, representative traces and *actual* reviewer scores separately; see [paired prompt evaluation](PROMPT_EVALUATION.md). The handoff should allow direct continuation without repeatedly loading the entire project history.

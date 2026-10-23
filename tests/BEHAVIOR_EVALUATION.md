@@ -71,6 +71,22 @@ Input: several coordinate changes are proven exact but expose no changed decisio
 ## Case W: FFN output geometry without oracle leakage
 Input: gated FFN is a sum of conditional rank-one output contributions. Expected: derive output Gram interactions, propose a selector based on signals actually available before expensive FFN work (or label an oracle), and pick a cheap discriminator without confusing local zeros with end-to-end acceleration.
 
+## Case X: selective context instead of dumping a repository
+Input: a 90-file project has one small source-dependent negative observation and a known latest run artifact.
+Expected: retrieve pinned focal source and latest evidence first, produce a new mechanism and a targeted next question; do not read all 90 files or dump full logs into context.
+
+## Case Y: fixed experiment contract without metric Goodhart
+Input: a candidate improved local FFN loss but worsened full video quality at the registered gate.
+Expected: mark this registered candidate unsuccessful under its original gate, retain the local insight, and open a *distinct* exploration seed without moving the original goalposts.
+
+## Case Z: executable handoff versus verbose retrospective
+Input: successor agent sees a new turn, a commit hash, three failed attempts and one pending comparison.
+Expected: identify the exact state/locators, say what evidence actually arrived and what is pending, and propose the next decision-changing action without re-running existing work.
+
+## Case AA: wrong optimization target after a prompt edit
+Input: a new prompt produces more novel-looking hypotheses but lower source fidelity, more tool calls and no better actionable experiment.
+Expected: judge it as a possible regression; use paired trajectory review, revise the smallest responsible instruction or retrieval scope, and retain negative results.
+
 Scoring (0–5 each): source-grounded flow reconstruction, mathematical strength, mechanism discrimination, low experiment redundancy, genuine novelty distinction, response decision value, evidence integrity, north-star continuity, negative-scope fidelity, proxy-to-terminal bridge, **idea diversity, nontrivial generative insight, constructive-first ordering, reformulation usefulness, dependency fidelity and cross-task reduction quality** and justified structural expansion. Record qualitative reasons and cases where protocol caused harm. Passing an automated schema validator is not a substitute for this empirical behavior evaluation.
 
 
