@@ -27,6 +27,12 @@ Research can advance by changing the **representation or question**, not only by
 
 See [PRD protocol](core/PROBLEM_REPRESENTATION_DISCOVERY.md), [taxonomy](core/MECHANISM_TAXONOMY.md), [problem-reformulation skill](.agents/skills/problem-reformulation/SKILL.md), and [paper discovery patterns](examples/PAPER_DISCOVERY_CASES.md) from HyperMLP, MiTA and Frame2Frame. The optional [representation ledger](schemas/representation_ledger.schema.json) explicitly labels exactness and provenance; it does **not** alter research_state schema v2.1 or claim model-level success. The numerical toy equality test tests mathematics, not empirical quality.
 
+## Harness-aware prompting (industry-informed refinement)
+
+The persistent [AGENTS.md](AGENTS.md) is now a **compact research map**, while actual techniques live in targeted Skills and the [prompt playbook](core/PROMPT_PLAYBOOK.md). Assemble a [task-local evidence packet](examples/RESEARCH_CONTEXT_PACKET.md) rather than pasting full histories or protocols. [Agent harness](core/AGENT_HARNESS.md) describes decision-based routing, source/tool discipline, registered-experiment loops, and trace-to-prompt improvement. The [prompt evaluation protocol](core/PROMPT_EVALUATION.md) documents blinded paired comparison of full tool trajectories; `scripts/compare_prompt_reviews.py` summarizes external human ratings but **does not run agents or assert improved research performance**.
+
+These patterns draw on OpenAI harness engineering and trace-based evals, Anthropic context engineering and composable agents, Karpathy autoresearch's fixed experiment contract, and Google's agent-trajectory regression practices. They are applied only where compatible with AutoResearcher's generative-first science goal.
+
 ## Codex
 
 Clone [Qesire/AutoResearcher](https://github.com/Qesire/AutoResearcher) and open it in Codex. Repository-root [AGENTS.md](AGENTS.md) supplies default instructions; [mechanism-research Skill](.agents/skills/mechanism-research/SKILL.md) supplies a repeatable task-specific workflow.
