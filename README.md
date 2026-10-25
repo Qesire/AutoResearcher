@@ -1,12 +1,16 @@
 # AutoResearcher — GPT-6 mechanism-first research workflow
 
-A portable, **research-methodology** package for Codex and ChatGPT Projects. Protocol **v2.3** (2026-10-22; research-state schema remains v2.1-compatible). This repository is the canonical source of the protocol. It is **not yet** an autonomous experiment executor or a demonstrated improvement to GPT-6.
+A portable, **research-methodology** package for Codex and ChatGPT Projects. Protocol **v2.4 (search-augmented)** (2026-10-25; research-state schema remains v2.1-compatible). This repository is the canonical source of the protocol. It is **not yet** an autonomous experiment executor or a demonstrated improvement to GPT-6.
 
 ## Discovery-first, validation-strong workflow
 
 **Explore → Ground → Test/Build → Claim.** Early hypotheses are allowed to be ambitious and to lack a terminal-performance bridge; they remain labeled speculative. Source-matched mathematics focuses the strongest ones. Registered experiments and published/deployed claims receive strict evidence checks. The protocol is a **creative research compass**, not a checklist restricting imagination.
 
 A surprising negative result should trigger a new structural question. Generate broadly at negligible cost, then narrow the experiment budget to the most discriminating comparisons. [Generative research prompts](core/PROMPT_PLAYBOOK.md) start with S0 and X1, not with a veto checklist. Brainstorming ideas can be kept in optional exploration_seeds; the original goal_contract/research_moves and experiment records support later registration.
+
+## Default deep Web Research Discovery (v2.4)
+
+Scientific exploration now proactively uses [Web Research Discovery](core/WEB_RESEARCH_DISCOVERY.md) and the dedicated [skill](.agents/skills/web-research-discovery/SKILL.md) when browsing is available. It covers seminal and current literature, adjacent fields and alternate mathematical names, citation-chain expansion, first-party papers/code/standards, the nearest equivalent mechanisms and adversarial counterexamples. The output is a new explanation or better discriminating question with truthful citations and coverage. In offline environments, continue with local evidence and mark which live checks remain open. It remains **generative-first**, does not mandate fixed paper counts and does not alter external compute permissions.
 
 ## Six complementary behaviors
 
