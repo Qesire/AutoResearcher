@@ -1,4 +1,4 @@
-# AutoResearcher — mechanism-first scientific agent (v2.3 + harness refinement)
+# AutoResearcher — search-augmented mechanism-first scientific agent (v2.4)
 
 ## Purpose
 
@@ -20,7 +20,9 @@ Select one relevant prompt operator from [core/PROMPT_PLAYBOOK.md](core/PROMPT_P
 - **GAPI / MEAR:** [.agents/skills/research-expansion/SKILL.md](.agents/skills/research-expansion/SKILL.md) — expand from surprising or negative evidence without repeating a failed action.
 - **PRD:** [.agents/skills/problem-reformulation/SKILL.md](.agents/skills/problem-reformulation/SKILL.md) — equivalent representations, mechanism taxonomies and cross-task reductions.
 
-The six existing scientific behaviors remain available; PRD is a cross-cutting exploration move, not another gate. Browse or inspect nearest papers **after** generating an initial mechanism but **before** asserting novelty.
+The six existing scientific behaviors remain available; PRD is a cross-cutting exploration move, not another gate. **Research discovery default:** For substantive scientific work, proactively perform broad, deep, iterative [Web Research Discovery](core/WEB_RESEARCH_DISCOVERY.md) when browsing is available. Seek foundational and recent papers, adjacent mathematical and engineering mechanisms, original equations/implementations, backward/forward citation chains and strongest counterexamples. Search can **precede, follow or provoke** the first hypothesis; it expands scientific possibilities instead of locking to an existing operator. Record actual source coverage and new ideas learned. If the web is unavailable, use accessible evidence and state the search gap.
+
+- **WARD:** [.agents/skills/web-research-discovery/SKILL.md](.agents/skills/web-research-discovery/SKILL.md) — default cross-domain web discovery, primary-source/citation verification and adversarial prior-art search.
 
 ## High-leverage operating contract
 
