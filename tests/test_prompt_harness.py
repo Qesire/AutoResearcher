@@ -12,7 +12,9 @@ D = {"mechanism": 3, "math": 4, "decision": 3, "evidence": 4, "efficiency": 2}
 class PromptHarnessTests(unittest.TestCase):
     def test_entrypoint_is_compact_and_links_to_protocol(self):
         agents = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
-        self.assertLess(len(agents), 4500)
+        self.assertLess(len(agents), 6000)
+        self.assertIn("core/WEB_RESEARCH_DISCOVERY.md", agents)
+        self.assertIn(".agents/skills/web-research-discovery/SKILL.md", agents)
         for path in ("core/AGENT_HARNESS.md", "core/PROMPT_PLAYBOOK.md",
                      ".agents/skills/problem-reformulation/SKILL.md"):
             self.assertIn(path, agents)
