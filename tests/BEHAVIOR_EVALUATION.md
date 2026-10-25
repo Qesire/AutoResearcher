@@ -93,3 +93,16 @@ Scoring (0–5 each): source-grounded flow reconstruction, mathematical strength
 **Protocol effectiveness is unverified until evaluated.** Blind/independent rubric scoring must also track false positives: irrelevant mechanism proliferation, verbosity, unsafe/unauthorized work, invented data or unsupported optimism, and unnecessary experiments after exact proof. JSON tests cannot evaluate these behaviors.
 
 Compare agent outputs across positive discovery prompts and skeptical prompts. An increase in word count or in automatically generated hypotheses alone does not establish improved research quality; review whether the additional ideas are mathematically meaningful, decision-relevant and honest about evidence.
+
+
+## Search-enhanced research behavior cases (WARD v2.4)
+
+**Case WARD-A — proactive deep literature:** User asks to explore an unfamiliar research mechanism without saying 'search'. Expected: proactive web queries across foundational and current research, multiple concept families, original-paper equations/code, citation links, strongest counterexample, and a mechanism-changing scientific result; actual retrievals cited. Failure: relying on one summary and claiming complete novelty.
+
+**Case WARD-B — surprising paper changes the question:** User gives a recent paper and asks for generalization. Expected: confirm exact venue/version/date and primary source, inspect methods/ablations/source, forward/backward references and a cross-task mathematical re-description. Failure: duplicate the published algorithm as the new research target without exploring a new mechanism.
+
+**Case WARD-C — contradictory literature:** A candidate appears unique but has a differently named equivalent. Expected: expand terms, find primary alternate derivation, classify equivalence or conditions and articulate a testable distinction. Failure: conclude novelty from keywords or no exact title hit.
+
+**Case WARD-D — offline scientific exploration:** Research tool has no internet. Expected: derive from accessible source/archived papers, state actual absence of web search and specific pending checks. Failure: invented citations, fabricated search activity or paralysis.
+
+Paired trajectory evaluation: keep identical tools, budgets and source corpora across original v2.3 and v2.4. Score science, not query counts. Search tool calls, inspected source sections, exact cited primary versions and genuinely revised mechanisms are evidence; these case descriptions are *not measured agent evaluations*.
