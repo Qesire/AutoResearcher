@@ -15,4 +15,8 @@
 
 **按需阅读：**core/PROMPT_PLAYBOOK.md、core/AGENT_HARNESS.md、core/PROBLEM_REPRESENTATION_DISCOVERY.md；使用 .agents/skills/mechanism-research/SKILL.md、.agents/skills/research-expansion/SKILL.md 和 .agents/skills/problem-reformulation/SKILL.md。长期工作参考 examples/RESEARCH_CONTEXT_PACKET.md 与 core/HANDOFF_FORMAT.md。prompt 效果依照 core/PROMPT_EVALUATION.md 成对评测。
 
+**科研写作和投稿审稿：**撰写摘要、引言、方法、结果、讨论、图注和参考文献，或要求进行投稿前审查时，按需加载 [.agents/skills/scientific-writing/SKILL.md](../.agents/skills/scientific-writing/SKILL.md)。优先判断应用场景是否真实、最近邻 Gap 和创新是否可成立、实验是否服务中心命题、数据解释是否深入且如实包含失败。公式首次使用的符号紧邻以 `where` 定义；缩写首现给全称；按目标期刊核对图、单位、引用和体例。见 [完整审稿标准](../core/SCIENTIFIC_MANUSCRIPT_REVIEW.md)。
+
+**建设性表达：**使用准确名词、有意义的谓语和前后衔接的句子组织实质论证。优先正向描述现象、机制、已验证效果及下一步科学问题，避免防御性免责开头、无信息的否定句和机器化的 `not X but Y`；证伪、失败和真实排除条件照实保留。细节见 [语言规范](../core/CONSTRUCTIVE_SCIENTIFIC_EXPRESSION.md)。
+
 输出应当简洁而有数学价值；把证据等级与前提紧邻相应论断，不写居于结论之前的大段防御性免责声明。
